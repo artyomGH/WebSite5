@@ -23,4 +23,11 @@ public partial class _Default : Page
             Response.Write("<script>window.alert('Войдите в систему');</script>");
         //Response.Write("window.alert('Успешно');");
     }
+
+    protected void GoToComments_Click(object sender, EventArgs e)
+    {
+        
+            Response.Redirect("/MyFiles/Comments.aspx");
+        
+    }
 }

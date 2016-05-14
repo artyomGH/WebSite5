@@ -41,9 +41,9 @@
                 </LoggedInTemplate>
             </asp:LoginView>
         </div>
-    <div class="center">
-        
-            <asp:Label   ID="nickname" runat="server" Text="nickname"></asp:Label>
+    <div >
+        <p>
+            <br /><asp:Label   ID="nickname" runat="server" Text="nickname"></asp:Label>
             <br /><asp:TextBox  class="wrapper form-control" ID="TextBox3" runat="server" TextMode="MultiLine" Height="95px" Width="548px" ></asp:TextBox>                   
             <br /><asp:Label   ID="Label3" runat="server" Text="Выберите кому отправить "></asp:Label> 
             <asp:DropDownList  ID="DropDownList1" runat="server" AutoPostBack="True" Height="29px" Width="173px" >
@@ -51,10 +51,9 @@
             <asp:Button class="btn btn-danger" ID="Send" runat="server" OnClick="btnSend" Text="Отправить" Width="114px" Height="35px" />
         
             <br /><asp:Label ID="Label2" runat="server" Text="Сообщения"></asp:Label>
-            <p><asp:TextBox  ID="TextBox1" runat="server" Height="249px" TextMode="MultiLine" Width="548px" ReadOnly="true"></asp:TextBox >
-            </p>
-           
-
+            <asp:TextBox  ID="TextBox1" runat="server" Height="249px" TextMode="MultiLine" Width="548px" ReadOnly="true"></asp:TextBox >
+            
+        </p>
     </div>     
         
             

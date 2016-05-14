@@ -14,6 +14,7 @@
     
     <a class="btn btn-primary" href="MyFiles/Video.aspx">Видео</a>
     <asp:Button class="btn btn-primary" ID="EnterToChat" runat="server" Text="Напишите нам" OnClick="EnterToChat_Click" />
+    <asp:Button class="btn btn-primary" ID="GoToComments" runat="server" Text="Коментарі" OnClick="GoToComments_Click" />
     
     <!-- текст <div class="jumbotron">
         

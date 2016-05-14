@@ -14,7 +14,7 @@ public partial class MyFiles_Mail : System.Web.UI.Page
             Response.Redirect("/Default.aspx");
         List<AspNetUser> listUsers = new List<AspNetUser>();
         AspNetUser potochnuj = new AspNetUser();
-        using (var db = new Entities4())
+        using (var db = new Entities5())
         {
 
             listUsers = db.AspNetUsers.ToList();
@@ -42,18 +42,6 @@ public partial class MyFiles_Mail : System.Web.UI.Page
 
     protected void btnSend(object sender, EventArgs e)
     {
-        string utfLine = TextBox3.Text;
-        System.Diagnostics.Debug.WriteLine("TextBox3.Text : " + TextBox3.Text);
-        System.Diagnostics.Debug.WriteLine("utfLine : " + utfLine);
-        Encoding utf = Encoding.UTF8;
-        Encoding win = Encoding.GetEncoding(1251);
-
-        byte[] utfArr = utf.GetBytes(utfLine);
-        byte[] winArr = Encoding.Convert(win, utf, utfArr);
-
-        string winLine = win.GetString(winArr);
-        //byte[] newstr = Encoding.Convert(Encoding.GetEncoding(866), Encoding.GetEncoding(1251), utfLine);
-        //System.Diagnostics.Debug.WriteLine(winLine);
         if (TextBox3.Text != "")
         {
             string toWhom = DropDownList1.SelectedItem.ToString();
@@ -69,7 +57,7 @@ public partial class MyFiles_Mail : System.Web.UI.Page
             message.date = DateTime.Now;
 
             
-            using (var db = new Entities4())
+            using (var db = new Entities5())
             {
                 
                 System.Diagnostics.Debug.WriteLine("MESSAGE : " + db.Mesages.Count().ToString());
@@ -85,8 +73,8 @@ public partial class MyFiles_Mail : System.Web.UI.Page
                 
 
                 ///=====
-                List<Mesage> messageHistory = db.Mesages.Where(m => (m.towhom == toWhom && m.fromwhom == fromWhom)
-                || (m.fromwhom == toWhom && m.towhom == fromWhom)).OrderBy(m => m.date).ToList();
+                List<Mesage> messageHistory = db.Mesages.Where(m => (m.towhom.ToString() == toWhom && m.fromwhom.ToString() == fromWhom)
+                || (m.fromwhom.ToString() == toWhom && m.towhom.ToString() == fromWhom)).OrderBy(m => m.date).ToList();
                 messageHistory.Reverse();
                 foreach (Mesage m in messageHistory)
                 {

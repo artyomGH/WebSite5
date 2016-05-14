@@ -32,14 +32,14 @@ public class WebService : System.Web.Services.WebService
     {
         System.Diagnostics.Debug.WriteLine("obnovit"+"   "+ str);
         string write_messages = "";
-        using (var db = new Entities4())
+        using (var db = new Entities5())
         {
             string toWhom = str;// DropDownList1.SelectedItem.ToString();
             string fromWhom = User.Identity.Name.ToString();
             if (db.Mesages.Count() > 0)
             {
-                List<Mesage> messageHistory = db.Mesages.Where(m => (m.towhom == toWhom && m.fromwhom == fromWhom)
-                 || (m.fromwhom == toWhom && m.towhom == fromWhom)).OrderBy(m => m.date).ToList();
+                List<Mesage> messageHistory = db.Mesages.Where(m => (m.towhom.ToString() == toWhom && m.fromwhom.ToString() == fromWhom)
+                 || (m.fromwhom.ToString() == toWhom && m.towhom.ToString() == fromWhom)).OrderBy(m => m.date).ToList();
                 messageHistory.Reverse();
 
                 foreach (Mesage m in messageHistory)
@@ -50,13 +50,26 @@ public class WebService : System.Web.Services.WebService
             }
 
         }
-        
-        /*var fromEncodind = Encoding.UTF8;//из какой кодировки
-        var bytes = fromEncodind.GetBytes(write_messages);
-        var toEncoding = Encoding.GetEncoding(1251);//в какую кодировку
-        write_messages = toEncoding.GetString(bytes);
-        System.Diagnostics.Debug.WriteLine(write_messages);*/
         return write_messages;
     }
+    [WebMethod]
+    public string refresh_comments()
+    {
+        string write_messages = "";
+        using (var db = new Entities5())
+        {
 
+            string toWhom = "all";
+            
+            List<Mesage> messageHistory = db.Mesages.Where(m => (m.towhom==toWhom)).ToList();
+            messageHistory.Reverse();
+            foreach (Mesage m in messageHistory)
+            {
+                write_messages += m.fromwhom + "(" + m.date.Value.ToShortTimeString().ToString() + "):" + "\n";
+                write_messages += "   " + m.message + "\n";
+            }
+        }
+        return write_messages;
+
+    }
 }

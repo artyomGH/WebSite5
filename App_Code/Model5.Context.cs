@@ -11,10 +11,10 @@ using System;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 
-public partial class Entities4 : DbContext
+public partial class Entities5 : DbContext
 {
-    public Entities4()
-        : base("name=Entities4")
+    public Entities5()
+        : base("name=Entities5")
     {
     }
 
@@ -30,5 +30,4 @@ public partial class Entities4 : DbContext
     public virtual DbSet<AspNetUser> AspNetUsers { get; set; }
     public virtual DbSet<Car> Cars { get; set; }
     public virtual DbSet<Mesage> Mesages { get; set; }
-    public virtual DbSet<Table> Tables { get; set; }
 }

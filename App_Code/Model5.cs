@@ -97,9 +97,3 @@ public partial class Mesage
     public Nullable<System.DateTime> date { get; set; }
     public Nullable<int> read { get; set; }
 }
-
-public partial class Table
-{
-    public int Id { get; set; }
-    public string efdscf { get; set; }
-}
