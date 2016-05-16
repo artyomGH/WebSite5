@@ -14,50 +14,66 @@
     <style>
        body {
         /*background: url(http://www.arc21.org.uk/download/1/Sheffield%20daytime%20web%20jk.jpg);  Цвет фона и путь к файлу */
-        background: #c7b39b url(/images/video_back.jpg);
+        background: #c7b39b url(/images/gray.jpg);
         color: #fff; /* Цвет текста */
        }
     </style>
 </head>
 <body>
     <form id="form1" runat="server"> 
-        
-    <div class="navbar navbar-inverse navbar-fixed-top">            
-            <ul class="nav navbar-nav navbar-left">
-                <li><a href="/Default.aspx"> На главную &raquo;</a></li>
-            </ul>            
-            <asp:LoginView runat="server" ViewStateMode="Disabled">
-                <AnonymousTemplate>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a runat="server" href="~/Account/Register">Регистрация</a></li>
-                        <li><a runat="server" href="~/Account/Login">Войти</a></li>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" runat="server" href="~/">СТО</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        
+                        <li><a runat="server" href="~/MyFiles/About">О нас</a></li>
+                        <li><a runat="server" href="~/MyFiles/Contact">Контакты</a></li>                        
                     </ul>
-                </AnonymousTemplate>
-                <LoggedInTemplate>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a runat="server" href="~/Account/Manage" title="Manage your account">Привет, <%: Context.User.Identity.GetUserName()  %>!</a></li>
-                        <li><asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" /></li>
-                    </ul>
-                </LoggedInTemplate>
-            </asp:LoginView>
+                    <asp:LoginView runat="server" ViewStateMode="Disabled">
+                        <AnonymousTemplate>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a runat="server" href="~/Account/Register">Регистрация</a></li>
+                                <li><a runat="server" href="~/Account/Login">Войти</a></li>
+                            </ul>
+                        </AnonymousTemplate>
+                        <LoggedInTemplate>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a runat="server" href="~/Account/Manage" title="Manage your account">Привет, <%: Context.User.Identity.GetUserName()  %>!</a></li>
+                                <li>
+                                    <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
+                                </li>
+                            </ul>
+                        </LoggedInTemplate>
+                    </asp:LoginView>
+                </div>
+            </div>
         </div>
-    <div >
-        <p>
-            <br /><asp:Label   ID="nickname" runat="server" Text="nickname"></asp:Label>
-            <br /><asp:TextBox  class="wrapper form-control" ID="TextBox3" runat="server" TextMode="MultiLine" Height="95px" Width="548px" ></asp:TextBox>                   
-            <br /><asp:Label   ID="Label3" runat="server" Text="Выберите кому отправить "></asp:Label> 
-            <asp:DropDownList  ID="DropDownList1" runat="server" AutoPostBack="True" Height="29px" Width="173px" >
+    <br />
+        <div class="marg" style="height: 510px; width: 597px" >
+    
+        
+            <br /><h4><asp:Label   ID="nickname" runat="server" Text="Ваше імя"></asp:Label></h4>
+            <asp:TextBox  class="wrapper form-control" ID="TextBox3" runat="server" TextMode="MultiLine" Height="95px" Width="548px" ></asp:TextBox>                   
+            <br /><asp:Label   class="h4" ID="Label3" runat="server" Text="Виберіть кому відправити "></asp:Label> 
+            <asp:DropDownList class="artem" ID="DropDownList1" runat="server" AutoPostBack="True"  >
                 </asp:DropDownList>   
-            <asp:Button class="btn btn-danger" ID="Send" runat="server" OnClick="btnSend" Text="Отправить" Width="114px" Height="35px" />
+            <asp:Button class="btn btn-default artem_left" ID="Send" runat="server" OnClick="btnSend" Text="Відправити"  />
         
-            <br /><asp:Label ID="Label2" runat="server" Text="Сообщения"></asp:Label>
-            <asp:TextBox  ID="TextBox1" runat="server" Height="249px" TextMode="MultiLine" Width="548px" ReadOnly="true"></asp:TextBox >
+            <br /><asp:Label class="h4" ID="Label2" runat="server" Text="Повідомлення"></asp:Label>
+            <br /><asp:TextBox  class="wrapper form-control" ID="TextBox1" runat="server" Height="249px" TextMode="MultiLine" Width="548px" ReadOnly="true"></asp:TextBox >
             
-        </p>
+        
     </div>     
-        
-            
-        <script src="/Scripts/jquery-1.10.2.js"></script>
+	
+	<script src="/Scripts/jquery-1.10.2.js"></script>
         <script src="/Scripts/jquery.unobtrusive-ajax.min.js"></script>
         <script src="/MyFiles/Scripts/JavaScript.js" type="text/javascript"></script>
     
@@ -66,6 +82,8 @@
             <asp:ServiceReference Path="~/MyFiles/WebService.asmx" />
         </Services>
         </asp:ScriptManager>   
+            
+        
     </form>
 </body>
 </html>

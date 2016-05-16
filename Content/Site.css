@@ -43,12 +43,24 @@ textarea {
 }
 .marg {
     
-    margin-left: 100px;
+    margin-left: 30%;
    
    } 
 .margins {
-    margin-top: 100px;
-    margin-bottom: 100px;
-    margin-right: 150px;
-    margin-left: 80px;
+    
+    margin-left: auto;
+    
+}
+.artem {
+  color: #000000;
+  background-color: #ffffff;
+  
+}
+.artem_left{
+    position: relative;
+    left: 150px;
+}
+.comment_otpravit_left{
+    position: relative;
+    left: 175px;
 }
