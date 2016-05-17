@@ -10,14 +10,7 @@
 
     <link href="../Content/bootstrap.css" rel="stylesheet" />
     <link href="../Content/bootstrap.min.css" rel="stylesheet" />
-    <link href="../Content/Site.css" rel="stylesheet" />
-    
-    <style>
-       body {        
-        background: #c7b39b url(/images/video_back.jpg);
-        color: #fff; /* Цвет текста */
-       }
-    </style>
+    <link href="../Content/Mail.css" rel="stylesheet" />    
 </head>
 <body>
     

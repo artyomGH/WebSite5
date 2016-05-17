@@ -1266,6 +1266,7 @@ h6 .small,
 h1,
 .h1 {
   font-size: 36px;
+    width: 267px;
 }
 h2,
 .h2 {
@@ -3060,9 +3061,9 @@ fieldset[disabled] a.btn {
   pointer-events: none;
 }
 .btn-default {
-  color: #333;
-  background-color: #fff;
-  border-color: #ccc;
+  color: #fff;
+  background-color: transparent;
+  border-color: transparent;    
 }
 .btn-default:focus,
 .btn-default.focus {

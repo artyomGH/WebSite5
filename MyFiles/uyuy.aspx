@@ -11,19 +11,17 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">WebSiteName</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
-      <li><a href="#">Page 1</a></li>
-      <li><a href="#">Page 2</a></li> 
-      <li><a href="#">Page 3</a></li> 
-    </ul>
+    <div class="layer1">
+   Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diem nonummy nibh  
+   euismod tincidunt ut lacreet dolore magna aliguam erat volutpat.
   </div>
-</nav>
+  <div class="layer2">
+    Ut wisis enim ad minim veniam, quis nostrud exerci tution ullamcorper suscipit  
+    lobortis nisl ut aliquip ex ea commodo consequat. Duis te feugifacilisi. 
+  </div>
+  <div class="clear"></div>
+   <p>Duis te feugifacilisi. Duis autem dolor in hendrerit in vulputate 
+   velit esse molestie consequat.</p>
     </form>
 </body>
 </html>

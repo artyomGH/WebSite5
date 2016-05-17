@@ -41,11 +41,30 @@ textarea {
     background: #ffffff;  
      
 }
-.marg {
+.marg-poloska {
+    
+    margin-left: 120px;
+   
+   } 
+.left-block{
+float:left;
+    height: 301px;
+    width: 130px;
+}
+.clear {
+    clear: left; /* Отмена обтекания */
+   }
+.right-block{
+    float:right;
+    height: 283px;
+    width: 127px;
+}
+
+.marg-left-default {
     
     margin-left: 30%;
    
-   } 
+} 
 .margins {
     
     margin-left: auto;
@@ -64,3 +83,8 @@ textarea {
     position: relative;
     left: 175px;
 }
+body {
+        /*background: url(http://www.arc21.org.uk/download/1/Sheffield%20daytime%20web%20jk.jpg);  Цвет фона и путь к файлу */
+        background: #c7b39b url(/images/gray.jpg);
+        color: #fff; /* Цвет текста */
+       }

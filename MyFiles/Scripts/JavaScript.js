@@ -45,7 +45,7 @@ function RefreshChat() {
         $get('TextBox1').innerHTML = result;
     });
 
-    setTimeout("RefreshChat();", 1000);
+    setTimeout("RefreshChat();", 5000);
 }
 function GetValue() {
 

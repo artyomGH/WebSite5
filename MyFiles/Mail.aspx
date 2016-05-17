@@ -9,15 +9,7 @@
     <title><%: Page.Title %> - My ASP.NET Application</title>   
     <link href="../Content/bootstrap.css" rel="stylesheet" />
     <link href="../Content/bootstrap.min.css" rel="stylesheet" />
-    <link href="../Content/Site.css" rel="stylesheet" />
-    
-    <style>
-       body {
-        /*background: url(http://www.arc21.org.uk/download/1/Sheffield%20daytime%20web%20jk.jpg);  Цвет фона и путь к файлу */
-        background: #c7b39b url(/images/gray.jpg);
-        color: #fff; /* Цвет текста */
-       }
-    </style>
+    <link href="../Content/Mail.css" rel="stylesheet" />    
 </head>
 <body>
     <form id="form1" runat="server"> 
@@ -57,7 +49,7 @@
             </div>
         </div>
     <br />
-        <div class="marg" style="height: 510px; width: 597px" >
+        <div class="marg-left-default" style="height: 510px; width: 597px" >
     
         
             <br /><h4><asp:Label   ID="nickname" runat="server" Text="Ваше імя"></asp:Label></h4>

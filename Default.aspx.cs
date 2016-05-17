@@ -30,4 +30,20 @@ public partial class _Default : Page
             Response.Redirect("/MyFiles/Comments.aspx");
         
     }
+    protected void OrderTracking_Click(object sender, EventArgs e)
+    {
+        string a = User.Identity.Name.ToString();
+        //
+        // Response.Write("<script>alert(tra-la-la');</script>");
+        if (a != "")
+            Response.Redirect("/MyFiles/OrderTracking.aspx");
+        else
+            Response.Write("<script>window.alert('Войдите в систему');</script>");
+        //Response.Write("window.alert('Успешно');");
+    }
+
+    protected void Video_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("/MyFiles/Video.aspx");
+    }
 }
