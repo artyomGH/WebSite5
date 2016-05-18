@@ -49,6 +49,26 @@
                 </div>
             </div>
         </div>
+        
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <div style="height: 510px; width: 597px">
+            
+            <label> Виберіть авто</label>
+            <br />
+            <asp:DropDownList ID="DropDownList1" runat="server">
+            </asp:DropDownList>
+            <br />
+            <br />
+            <asp:Table ID="Table1" runat="server" BackColor="#FF0066" BorderColor="#660066" BorderStyle="Groove" ForeColor="#99CCFF" GridLines="Both" Height="212px" Width="390px">
+            </asp:Table>
+            
+        </div>
+
+        
 
     </form>
 </body>
