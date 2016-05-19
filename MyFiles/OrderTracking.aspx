@@ -9,7 +9,6 @@
     <title><%: Page.Title %> - My ASP.NET Application</title>   
     <link href="../Content/bootstrap.css" rel="stylesheet" />
     <link href="../Content/bootstrap.min.css" rel="stylesheet" />
-    <link href="../Content/Site.css" rel="stylesheet" />    
     
 </head>
 <body>
@@ -59,12 +58,15 @@
             
             <label> Виберіть авто</label>
             <br />
-            <asp:DropDownList ID="DropDownList1" runat="server">
+            <asp:DropDownList ID="DropDownList1" runat="server"
+                AutoPostBack="true" >
             </asp:DropDownList>
             <br />
             <br />
             <asp:Table ID="Table1" runat="server" BackColor="#FF0066" BorderColor="#660066" BorderStyle="Groove" ForeColor="#99CCFF" GridLines="Both" Height="212px" Width="390px">
             </asp:Table>
+            
+            <asp:TextBox ID="TextBox1" runat="server" Height="153px" TextMode="MultiLine" Width="291px"></asp:TextBox>
             
         </div>
 

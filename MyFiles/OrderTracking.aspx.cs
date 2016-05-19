@@ -9,12 +9,12 @@ public partial class MyFiles_OrderTracking : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        List<car> listAvto = new List<car>();
-        AspNetUser current = new AspNetUser();
-
         if (User.Identity.Name.ToString() == "")
             Response.Redirect("/Default.aspx");
+
+        List<car> listAvto = new List<car>();
         List<AspNetUser> listUsers = new List<AspNetUser>();
+        AspNetUser current = new AspNetUser();
 
         using (var db = new Entities5())
         {
@@ -25,6 +25,7 @@ public partial class MyFiles_OrderTracking : System.Web.UI.Page
                     current = m;
                 }            
         }
+         
         using (var db = new workshopEntities())
         {
             listAvto = db.cars.Where(m => (m.client.email == current.Email)).ToList();            
@@ -33,11 +34,10 @@ public partial class MyFiles_OrderTracking : System.Web.UI.Page
         DropDownList1.DataTextField = "registrNumber";
         DropDownList1.DataValueField = "idCar";
         if (!IsPostBack)
-        {
             DropDownList1.DataBind();
-            //db.SaveChanges();
-
-        }
+            
+        TextBox1.Text= GetDataForCar();
+        
         TableRow row = new TableRow();
         TableCell cell = new TableCell();
         cell.Text = "blah blah blah";
@@ -56,5 +56,42 @@ public partial class MyFiles_OrderTracking : System.Web.UI.Page
     protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)
     {
         Context.GetOwinContext().Authentication.SignOut();
+    }
+    
+    public string GetDataForCar()
+    {
+        string tmp = "";
+        if (DropDownList1.SelectedItem != null)
+        {
+            
+            string currentCarRegistrNumber = DropDownList1.SelectedItem.ToString();
+            car currentCar = new car();
+            List<order> listOrder = new List<order>();
+            //operation operation = new operation();
+            List<process> listProcess = new List<process>();
+            using (var db = new workshopEntities())
+            {
+                currentCar = db.cars.Where(m => m.registrNumber == currentCarRegistrNumber).First();
+                listOrder = db.orders.Where(m => m.Car_idCar == currentCar.idCar).ToList();
+
+
+                tmp += "carNumber: " + currentCar.registrNumber.ToString();
+                foreach (order o in listOrder)
+                {
+                    tmp += "\norder status: " + o.status.ToString();
+                    tmp += "\nmanager: " + o.worker.lastName;
+                    listProcess = db.processes.Where(m => m.Order_idOrder == o.idOrder).ToList();
+                    foreach (process p in listProcess)
+                    {
+                        tmp += "\nname operation: " + p.operation.nameOperation.ToString();
+                        tmp += "\nduration operation: " + p.operation.duration.ToString();
+                        tmp += "\nworker: " + p.worker.lastName.ToString();
+                    }
+                }
+            }
+
+            
+        }
+        return tmp;
     }
 }

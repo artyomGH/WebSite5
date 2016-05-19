@@ -7,10 +7,16 @@
     if (str.indexOf('Mail') != -1)
         RefreshChat();
 });
-$('input[name=browser]').change(function () {
+$('input[name=DropDownList2]').change(function () {
     var value = $('input[name=browser]:checked').val();
     alert(value);
     
+});
+
+$("#DropDownList1").change(function () {
+    var value = $('input[name=browser]:checked').val();
+    alert(value);
+
 });
 
 function refclick()
@@ -29,6 +35,10 @@ function refclick()
 $("#Button2").click(function () {
     alert("ascascas");    
 });
+if (document.getElementById('id_in_register')) {
+    location.reload(true)
+}
+
 
 function RefreshComment() {
     //alert("RefreshComment");

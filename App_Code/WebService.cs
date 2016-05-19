@@ -30,6 +30,7 @@ public class WebService : System.Web.Services.WebService
     [WebMethod]
     public string obnovit(string str)
     {
+         
         System.Diagnostics.Debug.WriteLine("obnovit"+"   "+ str);
         string write_messages = "";
         using (var db = new Entities5())
