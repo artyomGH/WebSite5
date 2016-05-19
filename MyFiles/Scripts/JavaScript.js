@@ -15,7 +15,7 @@ $('input[name=DropDownList2]').change(function () {
 
 $("#DropDownList1").change(function () {
     var value = $('input[name=browser]:checked').val();
-    alert(value);
+    //alert(value);
 
 });
 
@@ -32,8 +32,16 @@ function refclick()
     
     alert("wefwe");
 }
-$("#Button2").click(function () {
-    alert("ascascas");    
+$("#btnSend").click(function () {
+    //alert("btnsend");
+    var e = document.getElementById("DropDownList1");
+    var strUser = e.options[e.selectedIndex].text;
+    var e1 = document.getElementById("TextBox3");
+    var strMessage = e1.value;
+    
+    WebService.addMessage(strUser, strMessage, function (result) {
+        $get('TextBox1').innerHTML = result;
+    });
 });
 if (document.getElementById('id_in_register')) {
     location.reload(true)
@@ -51,11 +59,11 @@ function RefreshChat() {
     //alert("RefreshChat");
     var e = document.getElementById("DropDownList1");
     var strUser = e.options[e.selectedIndex].text;
-    WebService.obnovit(strUser, function (result) {
+    WebService.refreshChat(strUser, function (result) {
         $get('TextBox1').innerHTML = result;
     });
 
-    setTimeout("RefreshChat();", 5000);
+    setTimeout("RefreshChat();", 1000);
 }
 function GetValue() {
 

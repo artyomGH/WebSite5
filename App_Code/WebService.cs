@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Services;
 using System.Text;
+using System.IO;
 /// <summary>
 /// Summary description for WebService
 /// </summary>
@@ -28,14 +29,12 @@ public class WebService : System.Web.Services.WebService
         return "a";
     }
     [WebMethod]
-    public string obnovit(string str)
-    {
-         
-        System.Diagnostics.Debug.WriteLine("obnovit"+"   "+ str);
+    public string refreshChat(string str)
+    {   
         string write_messages = "";
         using (var db = new Entities5())
         {
-            string toWhom = str;// DropDownList1.SelectedItem.ToString();
+            string toWhom = str;
             string fromWhom = User.Identity.Name.ToString();
             if (db.Mesages.Count() > 0)
             {
@@ -52,6 +51,36 @@ public class WebService : System.Web.Services.WebService
 
         }
         return write_messages;
+    }
+    [WebMethod]
+    public string addMessage(string str,string textOfMess)
+    {
+        string toWhom = str;
+        string fromWhom = User.Identity.Name.ToString();
+        string write_messages = "";
+
+        StreamWriter w = new StreamWriter(@"E:\logWebSite5.txt");
+        w.WriteLine(write_messages);
+        w.Close();
+        Mesage message = new Mesage();        
+        message.towhom = toWhom;
+        message.fromwhom = fromWhom;
+        message.read = 0;
+        message.message = textOfMess;
+        message.date = DateTime.Now;
+                
+        using (var db = new Entities5())
+        {            
+            if (0 < db.Mesages.Count())
+                message.Id = db.Mesages.Select(m => m.Id).ToList().Max() + 1;
+            else
+                message.Id = 0;
+
+            db.Mesages.Add(message);
+            db.SaveChanges();
+            refreshChat(toWhom);            
+            return write_messages;
+        }
     }
     [WebMethod]
     public string refresh_comments()

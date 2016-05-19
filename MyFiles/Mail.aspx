@@ -57,8 +57,10 @@
             <br /><asp:Label   class="h4" ID="Label3" runat="server" Text="Виберіть кому відправити "></asp:Label> 
             <asp:DropDownList class="artem" ID="DropDownList1" runat="server" AutoPostBack="True"  >
                 </asp:DropDownList>   
-            <asp:Button class="btn btn-default artem_left" ID="Send" runat="server" OnClick="btnSend" Text="Відправити"  />
-        
+            <asp:Button class="btn btn-default artem_left" ID="Send" runat="server" Text="Відправити"  />
+            <br />
+            <button id="btnSend" type="button" >Кнопка с текстом</button>
+            <br />
             <br /><asp:Label class="h4" ID="Label2" runat="server" Text="Повідомлення"></asp:Label>
             <br /><asp:TextBox  class="wrapper form-control" ID="TextBox1" runat="server" Height="249px" TextMode="MultiLine" Width="548px" ReadOnly="true"></asp:TextBox >
             
