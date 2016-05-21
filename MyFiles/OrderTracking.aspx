@@ -9,6 +9,7 @@
     <title><%: Page.Title %> - My ASP.NET Application</title>   
     <link href="../Content/bootstrap.css" rel="stylesheet" />
     <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Content/OrderTracking.css" rel="stylesheet" />
     
 </head>
 <body>
@@ -54,23 +55,21 @@
         <br />
         <br />
         <br />
-        <div style="height: 510px; width: 597px">
+        <div class="marg" style="height: 510px; width: 597px">
             
             <label id="Label1"> Виберіть авто</label>
             <br />
             <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="true" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" >
             </asp:DropDownList>
             
-            <br /><asp:Label ID="Label2" runat="server" Text="Виберіть дату замовлення"></asp:Label>
+            <br /><label id="Label2" > Виберіть дату замовлення></label>
             <br />
             <asp:DropDownList ID="DropDownList2" runat="server" AutoPostBack="true">
             </asp:DropDownList>
             <br />
             <br />
-            <asp:Table ID="Table1" runat="server" BackColor="#FF0066" BorderColor="#660066" BorderStyle="Groove" ForeColor="#99CCFF" GridLines="Both" Height="212px" Width="390px">
+            <asp:Table   ID="Table1" runat="server" Height="132px" Width="318px"   >
             </asp:Table>
-            
-            <asp:TextBox ID="TextBox1" runat="server" Height="153px" TextMode="MultiLine" Width="291px"></asp:TextBox>
             
         </div>
 

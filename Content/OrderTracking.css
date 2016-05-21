@@ -1,0 +1,21 @@
+﻿body {
+        
+        background: #c7b39b url(/images/gray.jpg);
+        /*color: #fff; /* Цвет текста */
+       }
+.artemtable, td, th {    
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+artemtable {
+    border-collapse: collapse;
+    
+}
+
+th, td {
+    padding: 15px;
+}
+.marg {
+    margin-left: 120px;
+}
