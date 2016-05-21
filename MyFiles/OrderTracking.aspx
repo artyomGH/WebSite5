@@ -56,10 +56,14 @@
         <br />
         <div style="height: 510px; width: 597px">
             
-            <label> Виберіть авто</label>
+            <label id="Label1"> Виберіть авто</label>
             <br />
-            <asp:DropDownList ID="DropDownList1" runat="server"
-                AutoPostBack="true" >
+            <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="true" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" >
+            </asp:DropDownList>
+            
+            <br /><asp:Label ID="Label2" runat="server" Text="Виберіть дату замовлення"></asp:Label>
+            <br />
+            <asp:DropDownList ID="DropDownList2" runat="server" AutoPostBack="true">
             </asp:DropDownList>
             <br />
             <br />
