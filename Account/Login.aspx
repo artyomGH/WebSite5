@@ -46,6 +46,7 @@
                     </div>
                 </div>
                 <p>
+                    <asp:HyperLink CssClass="text-danger" runat="server" ID="RegisterHyperLink" ViewStateMode="Disabled">Зареєструйтеся</asp:HyperLink>
                     якщо не маєти акаунта.
                 </p>
             </section>
