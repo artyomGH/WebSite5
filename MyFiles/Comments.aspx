@@ -51,11 +51,11 @@
             </div>
         </div>
 
-        <div class="marg" style="height: 510px; width: 597px" >
+        <div class="marg-left-default" style="height: 510px; width: 597px" >
             <br /><br /><asp:Label ID="Label1" runat="server" Text="Введіть ім'я або залиште пустим"></asp:Label>
             <br />
             <asp:TextBox class="artem" ID="TextBox2" runat="server"></asp:TextBox>
-            <asp:Button class="btn btn-default comment_otpravit_left" ID="SendComment" runat="server" OnClick="Button1_Click" Text="Відправити" />
+            <asp:Button class=" comment_otpravit_left" ID="SendComment" runat="server" OnClick="Button1_Click" Text="Відправити" />
             
             <br /><br /><asp:TextBox class="artem" ID="TextBox3" runat="server" Height="47px" Width="429px" TextMode="MultiLine"></asp:TextBox>
             

@@ -85,13 +85,14 @@ public class WebService : System.Web.Services.WebService
     [WebMethod]
     public string refresh_comments()
     {
+        List<Mesage> messageHistory = new List<Mesage>() ;
         string write_messages = "";
         using (var db = new Entities5())
         {
 
             string toWhom = "all";
-            
-            List<Mesage> messageHistory = db.Mesages.Where(m => (m.towhom==toWhom)).ToList();
+            if(db.Mesages.Select(m => (m.towhom == toWhom)).Count() > 0)
+                messageHistory = db.Mesages.Where(m => (m.towhom==toWhom)).ToList();
             messageHistory.Reverse();
             foreach (Mesage m in messageHistory)
             {

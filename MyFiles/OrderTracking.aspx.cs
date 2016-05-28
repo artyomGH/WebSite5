@@ -31,9 +31,12 @@ public partial class MyFiles_OrderTracking : System.Web.UI.Page
         }
         using (var db = new workshopEntities())
         {
-            listAvto = db.cars.Where(m => (m.client.email == currentUser.Email)).ToList();
-            currentCar = listAvto[0];
-            listOrder = db.orders.Where(m => (m.Car_idCar == currentCar.idCar)).ToList();                     
+            if (db.cars.Where(m => (m.client.email == currentUser.Email)).Count() > 0)
+            {
+                listAvto = db.cars.Where(m => (m.client.email == currentUser.Email)).ToList();
+                currentCar = listAvto[0];
+                listOrder = db.orders.Where(m => (m.Car_idCar == currentCar.idCar)).ToList();
+            }                   
         }
 
         

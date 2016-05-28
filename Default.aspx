@@ -19,16 +19,24 @@
 
         </div>
             <div class="layer2" style="height: 538px;">
-                <h2>"СТО на Дарнице - Автосервис &quot;ВВС&quot;">Автосервис "ВВС"        </h2>
-                <div style="width: 538px; height: 402px;">
-                    <p>Автосервис "ВВС" – завоевавшая доверие автолюбителей в Киеве <strong>СТО на Позняках</strong> постгарантийного обслуживания.</p>
-                    <p>Отличное качество обслуживания и индивидуальный подходк каждому клиенту - визитная карточка нашего предприятия.</p>
-                    С самого начала существования мы привлекаем заказчика гибкостью, динамичностью, желанием меняться вместе с непрерывно развивающимся рынком автоуслуг.
-                <br>
-                    <br>
-                    Время показало, что выбранный курс оказался удачным и способствовует расширению деятельности фирмы.<iframe src="http://www.youtube.com/embed/eeX5CbbIahQ" frameborder="0" allowfullscreen="true" style="width: 66%; height: 188px;"></iframe>
+                <h2>Lorem ipsum </h2>
+                <div style="width: 557px; height: 144px;">
+                    <p>Nullam et sodales nunc, vel pharetra est. Fusce non nisl velit.
+                    Integer scelerisque tortor quis dolor condimentum, ac accumsan dui commodo.
+                    Aenean et diam mi. Nunc vestibulum sem felis. 
+                    Praesent ac libero elementum, varius enim ut, facilisis dolor. 
+                    Fusce sit amet tellus at justo faucibus maximus commodo vel libero. 
+                    Vestibulum malesuada eget erat et efficitur. Praesent scelerisque 
+                    velit ac libero vulputate, id mattis dui tincidunt. Pellentesque 
+                    habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p> 
+                    
+                </div>
+                <div style="height: 308px; width: 559px">
+                    <iframe src="//www.youtube.com/embed/FkX88N4pCow?rel=0" frameborder="0" allowfullscreen style="height: 285px; width: 540px"></iframe>
 
                 </div>
+                
+                 <br />
             </div>            
         </div>
     

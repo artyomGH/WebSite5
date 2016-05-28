@@ -80,8 +80,21 @@ float:left;
     left: 150px;
 }
 .comment_otpravit_left{
+    background-color: #eeeeee;
+    color:#000000;
     position: relative;
     left: 175px;
+}
+.comment_otpravit_left:focus,
+.comment_otpravit_left.focus {
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #8c8c8c;
+}
+.comment_otpravit_left:hover {
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #adadad;
 }
 body {
         /*background: url(http://www.arc21.org.uk/download/1/Sheffield%20daytime%20web%20jk.jpg);  Цвет фона и путь к файлу */
