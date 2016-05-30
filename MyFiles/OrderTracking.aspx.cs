@@ -98,7 +98,7 @@ public partial class MyFiles_OrderTracking : System.Web.UI.Page
         headerRow.BackColor = Color.BlanchedAlmond;
 
         string[] headerName= { "Назва операції", "Прізвище робітника", "Рівень кваліфікації робітника",
-                               "Робота повинна була розпочатись", "Розпочалась", "Робота повинна була завершитись", "Закінчилась", "Статус"};
+                               "Робота повинна була розпочатись", "Фактично розпочалась", "Робота повинна була завершитись", "Фактично закінчилась", "Статус операції"};
         int numberOfHeadCell = headerName.Length;
         TableHeaderCell[] headerTableCells = new TableHeaderCell[numberOfHeadCell];
 

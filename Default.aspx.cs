@@ -20,7 +20,7 @@ public partial class _Default : Page
         if (a != "")
             Response.Redirect("/MyFiles/Mail.aspx");
         else
-            Response.Write("<script>window.alert('Войдите в систему');</script>");
+            Response.Write("<script>window.alert('Увійдіть в систему');</script>");
         //Response.Write("window.alert('Успешно');");
     }
 
@@ -38,7 +38,7 @@ public partial class _Default : Page
         if (a != "")
             Response.Redirect("/MyFiles/OrderTracking.aspx");
         else
-            Response.Write("<script>window.alert('Войдите в систему');</script>");
+            Response.Write("<script>window.alert('Увійдіть в систему');</script>");
         //Response.Write("window.alert('Успешно');");
     }
 

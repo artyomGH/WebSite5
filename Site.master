@@ -58,21 +58,21 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         
-                        <li><a runat="server" href="~/MyFiles/About">О нас</a></li>
-                        <li><a runat="server" href="~/MyFiles/Contact">Контакты</a></li>                        
+                        <%--<li><a runat="server" href="~/MyFiles/About">Про нас</a></li>--%>
+                        <li><a runat="server" href="~/MyFiles/Contact">Контакти</a></li>                        
                     </ul>
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a runat="server" href="~/Account/Register">Регистрация</a></li>
-                                <li><a runat="server" href="~/Account/Login">Войти</a></li>
+                                <li><a runat="server" href="~/Account/Register">Реєстрація</a></li>
+                                <li><a runat="server" href="~/Account/Login">Увійти</a></li>
                             </ul>
                         </AnonymousTemplate>
                         <LoggedInTemplate>
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a runat="server" href="~/Account/Manage" title="Manage your account">Привет, <%: Context.User.Identity.GetUserName()  %>!</a></li>
+                                <li><a runat="server" href="~/Account/Manage" title="Manage your account">Привіт, <%: Context.User.Identity.GetUserName()  %>!</a></li>
                                 <li>
-                                    <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
+                                    <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Вийти" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
                                 </li>
                             </ul>
                         </LoggedInTemplate>
