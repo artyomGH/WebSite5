@@ -16,6 +16,7 @@
             <asp:Button class="btn btn-default" ID="GoToComments" runat="server" Text= "Коментарі" OnClick="GoToComments_Click" Width="125px" />
             <asp:Button class="btn btn-default" ID="Video" runat="server" Text="Відео" OnClick="Video_Click" Width="125px" />
             <asp:Button class="btn btn-default" ID="OrderTracking" runat="server" Text="Хід замовлення" OnClick="OrderTracking_Click" Width="125px" />
+            <asp:Button class="btn btn-default" ID="ForManager" runat="server" Text="Призначити" OnClick="ForManager_Click" Width="125px" Visible="False" />
 
         </div>
             <div class="layer2" style="height: 538px;">

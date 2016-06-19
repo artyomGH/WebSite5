@@ -126,6 +126,7 @@ public partial class MyFiles_OrderTracking : System.Web.UI.Page
             car currentCar = new car();
             order curOrder = new order();
             List<process> listProcess = new List<process>();
+            //операция и воркер создавать 
             using (var db = new workshopEntities())
             {
                 currentCar = db.cars.Where(m => m.registrNumber == currentCarRegistrNumber).First();
