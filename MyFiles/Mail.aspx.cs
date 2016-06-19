@@ -16,16 +16,21 @@ public partial class MyFiles_Mail : System.Web.UI.Page
         AspNetUser potochnuj = new AspNetUser();
         using (var db = new Entities5())
         {
-
             listUsers = db.AspNetUsers.ToList();
-
             foreach (AspNetUser m in listUsers)
                 if (m.UserName == User.Identity.Name.ToString())
                 {
                     potochnuj = m;
                 }
+            if (potochnuj.ManagerRights == false)
+                listUsers = db.AspNetUsers.Where(m => m.ManagerRights == true).ToList();
+            else
+            {
+                //listUsers = db.AspNetUsers.ToList();
+                listUsers.Remove(potochnuj);
+            }
         }
-        listUsers.Remove(potochnuj);
+        
         DropDownList1.DataSource = listUsers;
         DropDownList1.DataTextField = "UserName";
         DropDownList1.DataValueField = "Id";

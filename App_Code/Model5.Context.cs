@@ -28,6 +28,5 @@ public partial class Entities5 : DbContext
     public virtual DbSet<AspNetUserClaim> AspNetUserClaims { get; set; }
     public virtual DbSet<AspNetUserLogin> AspNetUserLogins { get; set; }
     public virtual DbSet<AspNetUser> AspNetUsers { get; set; }
-    public virtual DbSet<Car> Cars { get; set; }
     public virtual DbSet<Mesage> Mesages { get; set; }
 }

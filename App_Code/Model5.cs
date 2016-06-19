@@ -42,6 +42,7 @@ public partial class AspNetUser
     public string SecurityStamp { get; set; }
     public string PhoneNumber { get; set; }
     public bool PhoneNumberConfirmed { get; set; }
+    public Nullable<bool> ManagerRights { get; set; }
     public bool TwoFactorEnabled { get; set; }
     public Nullable<System.DateTime> LockoutEndDateUtc { get; set; }
     public bool LockoutEnabled { get; set; }
@@ -81,11 +82,6 @@ public partial class C__MigrationHistory
     public string ContextKey { get; set; }
     public byte[] Model { get; set; }
     public string ProductVersion { get; set; }
-}
-
-public partial class Car
-{
-    public int Id { get; set; }
 }
 
 public partial class Mesage
